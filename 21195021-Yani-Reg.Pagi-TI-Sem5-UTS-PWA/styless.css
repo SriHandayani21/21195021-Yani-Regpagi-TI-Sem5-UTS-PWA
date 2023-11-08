@@ -1,0 +1,73 @@
+/* Gaya header */
+h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 20px;
+    color: #007bff; /* Warna teks biru */
+}
+
+/* Gaya gambar profil */
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+    height: auto;
+    border: 5px solid #007bff; /* Bingkai tebal berwarna biru */
+    border-radius: 50%;
+    margin-top: 20px;
+}
+
+/* Gaya untuk data diri */
+p {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Gaya untuk formulir komentar */
+#komentar-form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Gaya untuk input komentar */
+#komentar {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
+
+/* Gaya untuk tombol Submit */
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* Style untuk daftar mahasiswa */
+ul li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+/* Gaya untuk pemberitahuan (ini hanya contoh) */
+.notification {
+    background-color: #28a745; /* Hijau */
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Bayangan pada pemberitahuan */
+}
+.biodata {
+    margin-top: 30px;
+}

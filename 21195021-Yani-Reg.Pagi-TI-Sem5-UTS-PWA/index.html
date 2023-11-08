@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/Logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="white"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="UTS PWA">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <title>UTS PWA</title>
+    <style>
+      body {
+        background-color: #e8e8e8;
+      }
+      
+      .kartu {
+        width: 800px;
+        margin: 0 auto;
+        margin-top: 70px;
+            box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.03);
+    transition: all .3s;
+           background-color: #d5abc9;
+    border: solid 8px #ea92ff;
+    border-top-right-radius: 80px;
+    border-bottom-left-radius: 80px;
+      } 
+      .kartu:hover {
+        background-color: #d6c6d5;
+        border: solid 8px #d44fc7;
+        border-top-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+      }
+      .foto {
+            padding: 20px;
+    margin-left: 30px;
+    margin-top: 10px;
+      }
+      tbody {
+    font-size: 20px;
+    font-weight: bold;
+    color:rgb(19, 12, 12);
+}
+.biodata {
+    margin-top: 30px;
+}
+
+    </style>
+  </head>
+  <body>
+        <a><h3 class="text-center text-success mt-3">Biodata</h3></a>
+        <!-- Isi Biodata Paling Keren di HTML disini -->
+<div class="container">
+  <div class="card kartu">
+    <div class="row">
+      <div class="col-md-4">
+      <div class="foto">
+        <img src="21195021.jpg" class="img-thumbnail" alt="" width="150" height="auto">
+      </div>
+      </div>
+      <div class="col-md-8 kertas-biodata">
+        <div class="biodata">
+        <table width="100%" border="0">
+    <tbody><tr>
+        <td valign="top">
+        <table border="0" width="100%" style="padding-left: 2px; padding-right: 13px;">
+          <tbody>
+            <tr>
+              <td width="25%" valign="top" class="textt">Nama</td>
+                <td width="2%">:</td>
+                <td style="color: #0c0c0c; font-weight:bold">Sri Handayani</td>
+            </tr>
+          <tr>
+              <td class="textt">NIM</td>
+                <td>:</td>
+                <td>21195021</td>
+            </tr>
+          <tr>
+              <td class="textt">Kelas</td>
+                <td>:</td>
+                <td>Reguler pagi</td>
+            </tr>
+          <tr>
+              <td class="textt">Semester</td>
+                <td>:</td>
+                <td>5</td>
+            </tr>
+          <tr>
+              <td class="textt">Mata Kuliah</td>
+                <td>:</td>
+                <td>Pemrograman Perangkat Bergerak</td>
+            </tr>
+          <tr>
+              <td valign="top" class="textt">Prodi</td>
+                <td valign="top">:</td>
+                <td>Teknik Informatika</td>
+          </tr>
+          <tr>
+            <td class="textt">Tujuan Belajar PWA</td>
+              <td>:</td>
+              <td>Menambah Pengetahuan</td>
+          </tr>
+        <tr>
+        </tbody>
+      </table>
+        </td>
+    </tr>
+    
+    </tbody></table>
+    <br>
+    <h2>Formulir Komentar</h2>
+    <form id="komentar-form">
+       <br> <input type="text" id="nama" placeholder="Masukkan Nama Anda"> </br>
+        <br><input type="text" id="komentar" placeholder="Masukkan Komentar"></br>
+       <br> <button type="submit">Submit</button> </br>
+
+       <h2 class="mt-4">Daftar Komentar</h2>
+       <ul id="daftarkomentar"></ul>
+
+       <h2 class="mt-4">Cari Data Komentar</h2>
+       <div class="form-inline">
+           <div class="form-group">
+               <label for="cariNama" class="mr-2">Cari Komentar:</label>
+               <input type="text" id="cariNama" class="form-control">
+           </div>
+           <button type="button" onclick="cariData()" class="btn btn-info">Cari</button>
+       </div>
+      <button type="button" onclick="hapusData()" class="btn btn-danger mt-3">Hapus Komentar</button>
+    </form>
+
+   
+</br>
+  </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="/indexdb.js"></script>
+    <script>
+    window.onload = () => {
+        'use strict';
+      
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker
+                   .register('./sw.js');
+        }
+      }
+      </script>
+<script>
+    // Minta izin notifikasi
+if ('Notification' in window) {
+  Notification.requestPermission()
+    .then(function (permission) {
+      if (permission === 'granted') {
+        showNotification('Selamat datang!', 'Terima kasih telah menggunakan PWA ini.'); 
+        alert('Yuhuy Selamat Datang');
+      }
+      else if (permission === 'denied') {
+        // Izin diblokir
+        alert('Yahah kasihan diblokir');
+    }
+
+    
+    });
+    
+}
+
+// Fungsi untuk menampilkan notifikasi
+function showNotification(title, message) {
+  if ('Notification' in window && Notification.permission === 'granted') {
+    navigator.serviceWorker.ready.then(function (registration) {
+      registration.showNotification(title, {
+        body: message,
+
+      });
+    });
+  }
+}
+</script>
+  </body>
+</html>
